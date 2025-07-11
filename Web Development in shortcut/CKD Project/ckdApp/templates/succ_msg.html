@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Insurance Claims Prediction </h1>
+    <div class="fieldWrapper">
+      <h2>For the values</h2>
+      <p>subscription_length:{{data_sul}}</p>
+      <p>vehicle_age:{{data_vea}}</p>
+      <p>customer_age:{{data_cus}}</p>
+      <p>region_density:{{data_red}}</p>
+      <p>turning_radius:{{data_tur}}</p>
+	  <p>length:{{data_leg}}</p>
+      <p>width:{{data_wid}}</p>
+      <p>gross_weight:{{data_grw}}</p>
+	   <p>engine_type:{{data_ent}}</p>
+      <br>
+      {% if out == 1 %}
+        <p>This Customer <b>will </b>  file an insurance claim: <b>Positive</b></p>
+      {% else %}
+        <p>This Customer <b>will not</b> file an insurance claim: <b>Negetive</b></p>
+
+      {% endif %}
+    
+    <a  href="{% url 'ckdApp:ckd' %}">InClaims Predicition</a>
+    <br>
+</div>
+{% endblock %}
+
